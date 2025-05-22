@@ -16,7 +16,13 @@ task env
 ````
 ### Run migrations
 ````bash
-task migrations
+
+task migrate
+````
+### Create superuser
+````bash
+
+task createsuperuser
 ````
 # *Endpoints:*
 ### Get Careers
