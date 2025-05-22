@@ -37,7 +37,7 @@ jobs:
     # Executar o script que gera o .env
     - name: Generate .env file
       run: |
-        python contrib/env_gen.py
+        task env
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DEBUG: ${{ secrets.DEBUG }}

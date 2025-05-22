@@ -20,12 +20,14 @@ dependencies = [
     "python-decouple>=3.8",
     "requests>=2.32.3",
     "ruff>=0.11.10",
+    "taskipy>=1.14.1",
 ]
 [tool.uv]
 cache-dir = "./.uv_cache"
 [tool.taskipy.settings]
 use_vars = true
 [tool.taskipy.tasks]
+env = "uv run python contrib/env_gen.py"
 migrate = "uv run python manage.py migrate"
 makemigrations = "uv run python manage.py makemigrations"
 runserver = "uv run python manage.py runserver 8004"

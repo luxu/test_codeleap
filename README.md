@@ -1,22 +1,29 @@
 # Project Codeleap
 
-# *Clone in the project*
+### Clone the project
 
-
-
-### Atualizar as libs dentro do *pyproject.toml*
 ````bash
 
+git clone https://github.com/luxu/test_codeleap.git
+````
+### Install the libs
+````bash
 uv pip install -r pyproject.toml
 ````
-
+### Create file .env
+````bash
+task env
+````
+### Run migrations
+````bash
+task migrations
+````
 # *Endpoints:*
-
 ### Get Careers
 ````bash
 
 import requests
-url = "http://localhost:8005/careers/"
+url = "http://localhost:8000/careers/"
 response = requests.get(url) 
 print(response.text)
 ````
@@ -24,13 +31,13 @@ print(response.text)
 ````bash
 
 import requests
-url = "http://localhost:8005/careers/1/"
+url = "http://localhost:8000/careers/1/"
 response = requests.get(url)
 print(response.text)
 ````
 ### Generate Token
 ````bash
-url = "http://localhost:8005/api/token-auth/"
+url = "http://localhost:8000/api/token-auth/"
 payload = {
     "username": "admin",
     "password": "admin"
@@ -42,7 +49,7 @@ token = response['token']
 ````bash
 
 import requests
-url = "http://localhost:8005/careers/"
+url = "http://localhost:8000/careers/"
 payload = {
     "title": "DevRel",
     "content": "Working in the Codeleap",
@@ -59,7 +66,7 @@ response = requests.get(url)
 ````bash
 
 import requests
-url = "http://localhost:8005/careers/1/"
+url = "http://localhost:8000/careers/1/"
 payload = {
     "author_ip": "0.0.0.0"
 }
@@ -74,7 +81,7 @@ print(response.json())
 ````bash
 
 import requests
-url = "http://localhost:8005/careers/1/"
+url = "http://localhost:8000/careers/1/"
 headers = {
     "Authorization": "Token <token>",
     "Content-Type": "application/json",
