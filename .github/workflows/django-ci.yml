@@ -35,6 +35,15 @@ jobs:
       run: |
         uv pip install --system -r pyproject.toml
 
+    # Executar o script que gera o .env
+    - name: Generate .env file
+      run: |
+        python contrig/env_gen.py
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        DEBUG: ${{ secrets.DEBUG }}
+        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+
     - name: Run tests with pytest
       run: |
         # Executa os testes com cobertura
