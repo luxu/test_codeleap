@@ -24,6 +24,13 @@ task migrate
 
 task createsuperuser
 ````
+
+# *Swagger*
+````bash
+
+http://localhost:8000/swagger/
+````
+
 # *Endpoints:*
 ### Get Careers
 ````bash
