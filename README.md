@@ -6,12 +6,29 @@
 
 git clone https://github.com/luxu/test_codeleap.git
 ````
+### Virtualenv
+````bash
+
+Create:
+Windows: python -m venv .venv
+Linux: python3 -m venv .venv
+
+Entry:
+- windows: .venv/Scripts/activate
+- linux: source .venv/bin/activate
+````
+### Install UV
+````bash
+
+pip install uv
+````
 ### Install the libs
 ````bash
 uv pip install -r pyproject.toml
 ````
 ### Create file .env
 ````bash
+
 task env
 ````
 ### Run migrations
@@ -24,13 +41,16 @@ task migrate
 
 task createsuperuser
 ````
+### Run server
+````bash
 
+task runserver
+````
 # *Swagger*
 ````bash
 
 http://localhost:8000/swagger/
 ````
-
 # *Endpoints:*
 ### Get Careers
 ````bash
