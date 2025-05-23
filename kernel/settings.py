@@ -84,9 +84,27 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        # 'Bearer': {
+        #     'type': 'apiKey',
+        #     'name': 'Authorization',
+        #     'in': 'header',
+        #     'description': """Autenticação JWT. Use o formato: Bearer {token}"""
+        # },
+        # Se você usa o TokenAuthentication padrão do DRF, pode usar algo como:
+        'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': """Autenticação por Token DRF. Use o formato: Token {token}"""
+        }
+    },
+    'USE_SESSION_AUTH': False, # Desabilita login/logout do Django no Swagger
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
